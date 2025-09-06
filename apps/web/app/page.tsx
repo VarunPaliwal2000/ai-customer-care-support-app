@@ -1,8 +1,29 @@
 "use client";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 import { api } from "@workspace/backend/_generated/api";
 import { Button } from "@workspace/ui/components/button";
-import { useMutation, useQuery } from "convex/react";
-export default function Page() {
+import {
+  Authenticated,
+  Unauthenticated,
+  useMutation,
+  useQuery,
+} from "convex/react";
+
+export default function Home() {
+  return (
+    <>
+      <Authenticated>
+        <UserButton />
+        <Page />
+      </Authenticated>
+      <Unauthenticated>
+        <SignInButton />
+      </Unauthenticated>
+    </>
+  );
+}
+
+function Page() {
   const users = useQuery(api.user.getMay);
   const addUser = useMutation(api.user.addUser);
 
