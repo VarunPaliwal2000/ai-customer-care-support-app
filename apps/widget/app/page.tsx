@@ -5,7 +5,6 @@ import { useMutation, useQuery } from "convex/react";
 export default function Page() {
   const users = useQuery(api.user.getMay);
   const addUser = useMutation(api.user.addUser);
-  console.log(users);
   return (
     <div className="flex items-center justify-center min-h-svh">
       <Button onClick={() => addUser()}> ADD </Button>
