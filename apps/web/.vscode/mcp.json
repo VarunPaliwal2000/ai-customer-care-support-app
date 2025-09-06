@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "Sentry": {
+      "url": "https://mcp.sentry.dev/mcp/varun-paliwal/ai-customer-care-support-app",
+      "type": "http"
+    }
+  }
+}

@@ -12,6 +12,9 @@ Notes
 .env.test.local
 .env.production.local
 
+# Sentry
+.env.sentry-build-plugin
+
 # Testing
 coverage
 

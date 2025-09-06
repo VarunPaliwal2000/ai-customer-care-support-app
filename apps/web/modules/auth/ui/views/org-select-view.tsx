@@ -5,8 +5,8 @@ export const OrgSelectView = () => {
     <OrganizationList
       hidePersonal
       skipInvitationScreen
-      afterCreateOrganizationUrl={"/"}
-      afterSelectOrganizationUrl={"/"}
+      afterCreateOrganizationUrl="/"
+      afterSelectOrganizationUrl="/"
     />
   );
 };
