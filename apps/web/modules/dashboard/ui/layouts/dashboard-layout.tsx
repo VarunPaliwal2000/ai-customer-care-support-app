@@ -1,7 +1,10 @@
 import { OrganizationGuard } from "@/modules/auth/ui/components/organization-gaurd";
 import { AuthLayout } from "@/modules/auth/ui/layouts/auth-layout";
 import { DashboardSidebar } from "@/modules/dashboard/ui/components/dashboard-sidebar";
-import { SidebarProvider } from "@workspace/ui/components/sidebar";
+import {
+  SIDEBAR_COOKIE_NAME,
+  SidebarProvider,
+} from "@workspace/ui/components/sidebar";
 import { cookies } from "next/headers";
 
 export const DashboardLayout = async ({
@@ -10,7 +13,7 @@ export const DashboardLayout = async ({
   children: React.ReactNode;
 }) => {
   const cookieStore = await cookies();
-  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+  const defaultOpen = cookieStore.get(SIDEBAR_COOKIE_NAME)?.value === "true";
   console.log("Default Open:", defaultOpen);
   return (
     <AuthLayout>

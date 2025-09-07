@@ -56,7 +56,7 @@ export const DashboardSidebar = () => {
     return pathname.startsWith(url);
   };
   return (
-    <Sidebar>
+    <Sidebar collapsible="icon">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -94,6 +94,10 @@ export const DashboardSidebar = () => {
                   <SidebarMenuButton
                     asChild
                     tooltip={item?.title}
+                    className={cn(
+                      isActive(item?.url) &&
+                        "bg-gradient-to-b from-sidebar-primary to-[#0b63f3]! text-sidebar-primary-foreground! hover:to-[#0b63f3]/90!"
+                    )}
                     isActive={isActive(item.url)}
                   >
                     <Link href={item?.url}>
@@ -115,6 +119,10 @@ export const DashboardSidebar = () => {
                     asChild
                     tooltip={item?.title}
                     isActive={isActive(item.url)}
+                    className={cn(
+                      isActive(item?.url) &&
+                        "bg-gradient-to-b from-sidebar-primary to-[#0b63f3]! text-sidebar-primary-foreground! hover:to-[#0b63f3]/90!"
+                    )}
                   >
                     <Link href={item?.url}>
                       <item.icon className="h-5 w-5" />
@@ -135,6 +143,10 @@ export const DashboardSidebar = () => {
                     asChild
                     tooltip={item?.title}
                     isActive={isActive(item.url)}
+                    className={cn(
+                      isActive(item?.url) &&
+                        "bg-gradient-to-b from-sidebar-primary to-[#0b63f3]! text-sidebar-primary-foreground! hover:to-[#0b63f3]/90!"
+                    )}
                   >
                     <Link href={item?.url}>
                       <item.icon className="h-5 w-5" />
@@ -161,7 +173,7 @@ export const DashboardSidebar = () => {
                   userButtonBox:
                     "w-full! flex-row-reverse! justify-end! gap-2! group-data-[collapsible=icon]:justify-center! text-sidebar-foreground!",
                   userButtonOuterIdentifier:
-                    "pl-0! group-data-[collapsible=icon]",
+                    "pl-0! group-data-[collapsible=icon]:hidden!",
                 },
               }}
             />
