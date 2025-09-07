@@ -14,12 +14,12 @@ export default function Page() {
   const addUser = useMutation(api.user.addUser);
 
   return (
-    <div className="flex items-center justify-center min-h-svh">
+    <div>
       <UserButton />
       <OrganizationSwitcher hidePersonal />
       <Button onClick={() => addUser()}> ADD </Button>
       <p>app/web</p>
-      {JSON.stringify(users)}
+      {/* {JSON.stringify(users)} */}
     </div>
   );
 }
